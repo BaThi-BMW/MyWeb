@@ -1,3 +1,23 @@
+/* --- HỆ THỐNG BIẾN SỐ PHONG CÁCH CÁ NHÂN --- */
+:root {
+    /* Màu nền */
+    --bg-dark: #0a0503;       /* Đen tro bụi */
+    --bg-glow: #3a0f05;       /* Đỏ nhiệt lượng lò nung */
+    --bg-card: #140a07;       /* Than củi mờ cho khối nội dung */
+    
+    /* Màu thương hiệu & Điểm nhấn */
+    --color-primary: #ff4500;  /* Cam lửa chính */
+    --color-accent: #ffaa00;   /* Vàng tia lửa */
+    --color-gold: #ffcc00;     /* Vàng hoàng kim */
+    --color-lava: #ff003c;     /* Đỏ cốt lõi magma */
+    --color-orange: #ff6a00;   /* Cam bốc cháy */
+    
+    /* Màu chữ */
+    --text-main: #fff4f0;      /* Trắng ấm áp */
+    --text-muted: #a19590;     /* Màu tro nhạt */
+    --text-paragraph: #bfaea7;  /* Chữ nội dung dễ đọc */
+}
+
 /* --- Chặng 1: Reset & Định dạng nền CHÁY RỰC LỬA --- */
 * {
     box-sizing: border-box; 
@@ -10,10 +30,9 @@ html {
 body {
     margin: 0; 
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
-    color: #fff4f0; /* Chữ trắng ấm hướng sắc lửa */
-    background-color: #0a0503; /* Nền đen tro độc hại */
-    /* Hiệu ứng ánh lửa phát ra từ tâm phía dưới bốc lên */
-    background-image: radial-gradient(circle at 50% 80%, #3a0f05 0%, #0a0503 70%); 
+    color: var(--text-main);
+    background-color: var(--bg-dark);
+    background-image: radial-gradient(circle at 50% 80%, var(--bg-glow) 0%, var(--bg-dark) 70%); 
     background-attachment: fixed;
 }
 
@@ -29,9 +48,9 @@ h1, h2, h3, p {
     justify-content: space-between;
     align-items: center;
     padding: 15px 8%; 
-    background-color: rgba(15, 7, 5, 0.95); /* Nền tối khói bụi */
-    border-bottom: 2px solid #ff4500; /* Viền cam lửa */
-    box-shadow: 0 4px 25px rgba(255, 69, 0, 0.25); /* Glow rực lửa */
+    background-color: rgba(15, 7, 5, 0.95); 
+    border-bottom: 2px solid var(--color-primary); 
+    box-shadow: 0 4px 25px rgba(255, 69, 0, 0.25); 
     position: sticky;
     top: 0;
     z-index: 100;
@@ -46,8 +65,8 @@ h1, h2, h3, p {
 }
 
 .brand span {
-    color: #ffaa00; /* Sắc vàng của tia lửa */
-    text-shadow: 0 0 12px #ff4500, 0 0 4px #ffaa00;
+    color: var(--color-accent); 
+    text-shadow: 0 0 12px var(--color-primary), 0 0 4px var(--color-accent);
 }
 
 .main-nav a {
@@ -55,14 +74,14 @@ h1, h2, h3, p {
     text-decoration: none; 
     font-weight: 800; 
     font-size: 14px;
-    color: #a19590;
+    color: var(--text-muted);
     text-transform: uppercase;
     transition: all 0.3s ease;
 }
 
 .main-nav a:hover, .main-nav a.active {
-    color: #ffaa00;
-    text-shadow: 0 0 10px #ff4500;
+    color: var(--color-accent);
+    text-shadow: 0 0 10px var(--color-primary);
 }
 
 /* --- Chặng 3: Khu vực Hero (Giới thiệu đầu trang) --- */
@@ -72,7 +91,7 @@ h1, h2, h3, p {
 }
 
 .eyebrow {
-    color: #ffcc00; /* Vàng sáng chói */
+    color: var(--color-gold); 
     font-weight: 800;
     font-size: 14px;
     letter-spacing: 3px;
@@ -85,8 +104,7 @@ h1, h2, h3, p {
     font-size: 3.5rem;
     font-weight: 900;
     line-height: 1.1;
-    /* Text-shadow đổ khối 3D màu đỏ magma cực cháy */
-    text-shadow: 0 0 20px rgba(255, 69, 0, 0.4), 3px 3px 0px #ff003c, 5px 5px 0px #800000;
+    text-shadow: 0 0 20px rgba(255, 69, 0, 0.4), 3px 3px 0px var(--color-lava), 5px 5px 0px #800000;
     margin-bottom: 20px;
 }
 
@@ -97,13 +115,12 @@ h1, h2, h3, p {
     margin: 0 auto 35px auto;
 }
 
-/* Nút bấm siêu cháy */
+/* Nút bấm kêu gọi hành động (CTA) */
 .primary-button {
     display: inline-block;
     padding: 14px 36px;
     text-decoration: none;
-    /* Gradient chạy từ Đỏ dung nham sang Cam cháy rực */
-    background: linear-gradient(90deg, #ff003c 0%, #ff6a00 100%); 
+    background: linear-gradient(90deg, var(--color-lava) 0%, var(--color-orange) 100%); 
     color: #ffffff;
     font-weight: 800;
     letter-spacing: 1.5px;
@@ -121,23 +138,23 @@ h1, h2, h3, p {
 /* --- Chặng 4: Khối About hoành tráng --- */
 .about-section {
     padding: 50px 8%;
-    background-color: #140a07; /* Nền than củi mờ */
+    background-color: var(--bg-card); 
     margin: 40px 8%;
     border-radius: 12px;
-    border: 1px solid #4a1a0f; /* Viền rực lửa ngầm */
+    border: 1px solid #4a1a0f; 
     box-shadow: inset 0 0 30px rgba(255, 69, 0, 0.15);
 }
 
 .about-section h2 {
     font-size: 28px;
-    color: #ff5500; /* Tiêu đề chuyển sang màu lửa cam */
+    color: #ff5500; 
     text-shadow: 0 0 15px rgba(255, 85, 0, 0.6);
     font-weight: 900;
     margin-bottom: 20px;
 }
 
 .about-section p {
-    color: #bfaea7;
+    color: var(--text-paragraph);
     font-size: 16px;
     margin-bottom: 20px;
 }
@@ -156,26 +173,26 @@ h1, h2, h3, p {
     align-items: center;
 }
 
-/* Tag nhấp nháy tạo điểm nhấn (Các cấp độ nhiệt của ngọn lửa) */
+/* Thẻ Tag phân cấp độ lửa nhiệt */
 .highlight-tag {
     display: inline-block;
     padding: 3px 8px;
     font-size: 11px;
     font-weight: 900;
-    background-color: #ff003c; /* Đỏ lõi lửa */
+    background-color: var(--color-lava); 
     color: #fff;
     border-radius: 3px;
     margin-right: 12px;
-    box-shadow: 0 0 10px #ff003c;
+    box-shadow: 0 0 10px var(--color-lava);
 }
 
 .topic-list li:nth-child(2) .highlight-tag {
-    background-color: #ff6a00; /* Cam bốc cháy */
-    box-shadow: 0 0 10px #ff6a00;
+    background-color: var(--color-orange); 
+    box-shadow: 0 0 10px var(--color-orange);
 }
 
 .topic-list li:nth-child(3) .highlight-tag {
-    background-color: #ffcc00; /* Vàng hoàng kim khí */
-    color: #0a0503;
-    box-shadow: 0 0 10px #ffcc00;
+    background-color: var(--color-gold); 
+    color: var(--bg-dark);
+    box-shadow: 0 0 10px var(--color-gold);
 }
