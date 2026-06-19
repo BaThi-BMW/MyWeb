@@ -1,29 +1,177 @@
-/* Chặng 1: liên kết CSS ngoài và selector cơ bản */
+/* --- Chặng 1: Reset & Định dạng nền chữ rực lửa --- */
 * {
     box-sizing: border-box; 
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0; 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-    color: #e2e8f0; /* Chữ màu xám sáng nhẹ mắt */
-    background-color: #0f172a; /* Nền xanh đen đậm chất Esports */
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+    color: #f8fafc; /* Chữ trắng sáng hẳn để nổi bật */
+    background-color: #050508; /* Nền đen sâu (Pitch Black) đậm chất gaming */
+    background-image: radial-gradient(circle at 50% 20%, #1e112a 0%, #050508 60%); /* Tạo hiệu ứng ánh đèn mờ ảo phía sau */
 }
 
 h1, h2, h3, p {
     margin-top: 0; 
-    line-height: 1.6;
+    line-height: 1.4;
+    letter-spacing: 0.5px;
 }
 
-a {
-    color: #38bdf8; /* Màu xanh Cyan nổi bật cho các liên kết */
+/* --- Chặng 2: Header & Khối Điều Hướng --- */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%; 
+    background-color: rgba(13, 12, 22, 0.95); /* Nền tối mờ */
+    border-bottom: 2px solid #ff0055; /* Viền đỏ neon cắt ngang */
+    box-shadow: 0 4px 20px rgba(255, 0, 85, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.brand {
+    font-weight: 900; 
+    font-size: 28px; 
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.brand span {
+    color: #ff0055; /* Chữ X màu đỏ rực làm điểm nhấn */
+    text-shadow: 0 0 10px #ff0055;
+}
+
+.main-nav a {
+    margin-left: 24px; 
     text-decoration: none; 
+    font-weight: 800; 
+    font-size: 14px;
+    color: #94a3b8;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
 }
 
-/* Định dạng cơ bản cho các khối nội dung mới */
-.content-block {
-    padding: 20px;
-    margin: 15px 0;
-    background-color: #1e293b; /* Nền khối sáng hơn nền body */
-    border-radius: 8px;
+.main-nav a:hover, .main-nav a.active {
+    color: #ff0055;
+    text-shadow: 0 0 8px #ff0055;
+}
+
+/* --- Chặng 3: Khu vực Hero (Giới thiệu đầu trang) --- */
+.hero {
+    padding: 100px 8% 60px 8%;
+    text-align: center;
+}
+
+.eyebrow {
+    color: #ffaa00; /* Màu vàng cam sấm sét */
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+#main-title {
+    color: #ffffff; 
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.2), 3px 3px 0px #ff0055;
+    margin-bottom: 20px;
+}
+
+.intro {
+    font-size: 18px;
+    color: #cbd5e1;
+    max-width: 700px;
+    margin: 0 auto 35px auto;
+}
+
+/* Nút bấm siêu cháy */
+.primary-button {
+    display: inline-block;
+    padding: 14px 36px;
+    background: linear-gradient(90deg, #ff0055 0%, #7000ff 100%); /* Gradient Đỏ sang Tím */
+    color: #ffffff;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    box-shadow: 0 0 15px rgba(255, 0, 85, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primary-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(255, 0, 85, 0.7), 0 0 10px rgba(112, 0, 255, 0.5);
+}
+
+/* --- Chặng 4: Khối About hoành tráng --- */
+.about-section {
+    padding: 50px 8%;
+    background-color: #0d0c16;
+    margin: 40px 8%;
+    border-radius: 12px;
+    border: 1px solid #2a1b40;
+    box-shadow: inset 0 0 20px rgba(112, 0, 255, 0.1);
+}
+
+.about-section h2 {
+    font-size: 28px;
+    color: #7000ff; /* Tiêu đề màu tím điện tử */
+    text-shadow: 0 0 10px rgba(112, 0, 255, 0.5);
+    font-weight: 900;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.about-section p {
+    color: #94a3b8;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.topic-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 30px;
+}
+
+.topic-list li {
+    margin-bottom: 18px;
+    color: #e2e8f0;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+/* Tag nhấp nháy tạo điểm nhấn */
+.highlight-tag {
+    display: inline-block;
+    padding: 3px 8px;
+    font-size: 11px;
+    font-weight: 900;
+    background-color: #ff0055;
+    color: #fff;
+    border-radius: 3px;
+    margin-right: 12px;
+    text-shadow: none;
+    box-shadow: 0 0 8px #ff0055;
+}
+
+.topic-list li:nth-child(2) .highlight-tag {
+    background-color: #ffaa00;
+    box-shadow: 0 0 8px #ffaa00;
+}
+
+.topic-list li:nth-child(3) .highlight-tag {
+    background-color: #00ffcc;
+    color: #050508;
+    box-shadow: 0 0 8px #00ffcc;
 }
