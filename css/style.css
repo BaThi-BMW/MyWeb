@@ -1,21 +1,25 @@
 /* --- HỆ THỐNG BIẾN SỐ PHONG CÁCH CÁ NHÂN --- */
 :root {
-    /* Màu nền */
-    --bg-dark: #0a0503;       /* Đen tro bụi */
-    --bg-glow: #3a0f05;       /* Đỏ nhiệt lượng lò nung */
-    --bg-card: #140a07;       /* Than củi mờ cho khối nội dung */
+    /* 1. MÀU NỀN (BACKGROUND) */
+    --bg-dark: #0a0503;         /* Đen tro bụi */
+    --bg-glow: #3a0f05;         /* Đỏ nhiệt lượng lò nung */
+    --bg-card: #140a07;         /* Than củi mờ cho khối nội dung */
     
-    /* Màu thương hiệu & Điểm nhấn */
-    --color-primary: #ff4500;  /* Cam lửa chính */
-    --color-accent: #ffaa00;   /* Vàng tia lửa */
-    --color-gold: #ffcc00;     /* Vàng hoàng kim */
-    --color-lava: #ff003c;     /* Đỏ cốt lõi magma */
-    --color-orange: #ff6a00;   /* Cam bốc cháy */
+    /* 2. MÀU CHÍNH (PRIMARY) & MÀU NHẤN (ACCENT) */
+    --color-primary: #ff4500;    /* Cam lửa chính */
+    --color-accent: #ffaa00;     /* Vàng tia lửa */
+    --color-gold: #ffcc00;       /* Vàng hoàng kim */
     
-    /* Màu chữ */
-    --text-main: #fff4f0;      /* Trắng ấm áp */
-    --text-muted: #a19590;     /* Màu tro nhạt */
-    --text-paragraph: #bfaea7;  /* Chữ nội dung dễ đọc */
+    /* 3. NÚT KÊU GỌI HÀNH ĐỘNG (CTA BUTTON) */
+    --cta-bg-start: #ff003c;     /* Đỏ cốt lõi magma */
+    --cta-bg-end: #ff6a00;       /* Cam bốc cháy */
+    --cta-text: #ffffff;         /* Màu chữ trên nút */
+    --cta-glow: rgba(255, 106, 0, 0.5); /* Độ tỏa nhiệt phát sáng của nút */
+    
+    /* 4. MÀU CHỮ (TEXT) */
+    --text-main: #fff4f0;        /* Trắng ấm áp */
+    --text-muted: #a19590;       /* Màu tro nhạt */
+    --text-paragraph: #bfaea7;    /* Chữ nội dung dễ đọc */
 }
 
 /* --- Chặng 1: Reset & Định dạng nền CHÁY RỰC LỬA --- */
@@ -104,7 +108,7 @@ h1, h2, h3, p {
     font-size: 3.5rem;
     font-weight: 900;
     line-height: 1.1;
-    text-shadow: 0 0 20px rgba(255, 69, 0, 0.4), 3px 3px 0px var(--color-lava), 5px 5px 0px #800000;
+    text-shadow: 0 0 20px rgba(255, 69, 0, 0.4), 3px 3px 0px var(--cta-bg-start), 5px 5px 0px #800000;
     margin-bottom: 20px;
 }
 
@@ -115,24 +119,26 @@ h1, h2, h3, p {
     margin: 0 auto 35px auto;
 }
 
-/* Nút bấm kêu gọi hành động (CTA) */
+/* NÚT BẤM KÊU GỌI HÀNH ĐỘNG (CTA) */
 .primary-button {
     display: inline-block;
     padding: 14px 36px;
     text-decoration: none;
-    background: linear-gradient(90deg, var(--color-lava) 0%, var(--color-orange) 100%); 
-    color: #ffffff;
+    /* Gọi dải màu gradient từ biến số CTA */
+    background: linear-gradient(90deg, var(--cta-bg-start) 0%, var(--cta-bg-end) 100%); 
+    color: var(--cta-text);
     font-weight: 800;
     letter-spacing: 1.5px;
     border-radius: 4px;
     text-transform: uppercase;
-    box-shadow: 0 0 20px rgba(255, 106, 0, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 20px var(--cta-glow), inset 0 0 10px rgba(255, 255, 255, 0.2);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .primary-button:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 30px rgba(255, 106, 0, 0.8), 0 0 15px rgba(255, 0, 60, 0.6);
+    /* Tăng nhiệt lượng phát sáng khi hover */
+    box-shadow: 0 0 30px var(--cta-bg-end), 0 0 15px var(--cta-bg-start);
 }
 
 /* --- Chặng 4: Khối About hoành tráng --- */
@@ -179,16 +185,16 @@ h1, h2, h3, p {
     padding: 3px 8px;
     font-size: 11px;
     font-weight: 900;
-    background-color: var(--color-lava); 
+    background-color: var(--cta-bg-start); 
     color: #fff;
     border-radius: 3px;
     margin-right: 12px;
-    box-shadow: 0 0 10px var(--color-lava);
+    box-shadow: 0 0 10px var(--cta-bg-start);
 }
 
 .topic-list li:nth-child(2) .highlight-tag {
-    background-color: var(--color-orange); 
-    box-shadow: 0 0 10px var(--color-orange);
+    background-color: var(--cta-bg-end); 
+    box-shadow: 0 0 10px var(--cta-bg-end);
 }
 
 .topic-list li:nth-child(3) .highlight-tag {
