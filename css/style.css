@@ -1,1 +1,182 @@
+/* --- Chặng 1: Reset & Định dạng nền CHÁY RỰC LỬA --- */
+* {
+    box-sizing: border-box; 
+}
 
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0; 
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+    color: #fff4f0; /* Chữ trắng ấm hướng sắc lửa */
+    background-color: #0a0503; /* Nền đen tro độc hại */
+    /* Thay đổi: Hiệu ứng ánh lửa phát ra từ tâm phía dưới bốc lên */
+    background-image: radial-gradient(circle at 50% 80%, #3a0f05 0%, #0a0503 70%); 
+}
+
+h1, h2, h3, p {
+    margin-top: 0; 
+    line-height: 1.4;
+    letter-spacing: 0.5px;
+}
+
+/* --- Chặng 2: Header & Khối Điều Hướng --- */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%; 
+    background-color: rgba(15, 7, 5, 0.95); /* Nền tối khói bụi */
+    border-bottom: 2px solid #ff4500; /* Thay đổi: Viền cam lửa (Orange Red) */
+    box-shadow: 0 4px 25px rgba(255, 69, 0, 0.25); /* Glow rực lửa */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.brand {
+    font-weight: 900; 
+    font-size: 28px; 
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.brand span {
+    color: #ffaa00; /* Thay đổi: Sắc vàng của tia lửa */
+    text-shadow: 0 0 12px #ff4500, 0 0 4px #ffaa00;
+}
+
+.main-nav a {
+    margin-left: 24px; 
+    text-decoration: none; 
+    font-weight: 800; 
+    font-size: 14px;
+    color: #a19590;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.main-nav a:hover, .main-nav a.active {
+    color: #ffaa00;
+    text-shadow: 0 0 10px #ff4500;
+}
+
+/* --- Chặng 3: Khu vực Hero (Giới thiệu đầu trang) --- */
+.hero {
+    padding: 100px 8% 60px 8%;
+    text-align: center;
+}
+
+.eyebrow {
+    color: #ffcc00; /* Vàng sáng chói */
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+    text-shadow: 0 0 8px rgba(255, 204, 0, 0.6);
+}
+
+#main-title {
+    color: #ffffff; 
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    /* Thay đổi: Text-shadow đổ khối 3D màu đỏ magma cực cháy */
+    text-shadow: 0 0 20px rgba(255, 69, 0, 0.4), 3px 3px 0px #ff003c, 5px 5px 0px #800000;
+    margin-bottom: 20px;
+}
+
+.intro {
+    font-size: 18px;
+    color: #e2d6d0;
+    max-width: 700px;
+    margin: 0 auto 35px auto;
+}
+
+/* NÚT BẤM SIÊU CHÁY - HIỆU ỨNG DUNG NHAM KHỞI ĐỘNG */
+.primary-button {
+    display: inline-block;
+    padding: 14px 36px;
+    /* Thay đổi: Gradient chạy từ Đỏ dung nham sang Cam cháy rực */
+    background: linear-gradient(90deg, #ff003c 0%, #ff6a00 100%); 
+    color: #ffffff;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    box-shadow: 0 0 20px rgba(255, 106, 0, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primary-button:hover {
+    transform: scale(1.05);
+    /* Thay đổi: Khi hover, nút tỏa nhiệt mạnh hơn */
+    box-shadow: 0 0 30px rgba(255, 106, 0, 0.8), 0 0 15px rgba(255, 0, 60, 0.6);
+}
+
+/* --- Chặng 4: Khối About hoành tráng --- */
+.about-section {
+    padding: 50px 8%;
+    background-color: #140a07; /* Thay đổi: Nền than củi mờ */
+    margin: 40px 8%;
+    border-radius: 12px;
+    border: 1px solid #4a1a0f; /* Viền rực lửa ngầm */
+    box-shadow: inset 0 0 30px rgba(255, 69, 0, 0.15);
+}
+
+.about-section h2 {
+    font-size: 28px;
+    color: #ff5500; /* Thay đổi: Tiêu đề chuyển sang màu lửa cam */
+    text-shadow: 0 0 15px rgba(255, 85, 0, 0.6);
+    font-weight: 900;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.about-section p {
+    color: #bfaea7;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.topic-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 30px;
+}
+
+.topic-list li {
+    margin-bottom: 18px;
+    color: #f2e6e1;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+/* Tag nhấp nháy tạo điểm nhấn (Các cấp độ của ngọn lửa) */
+.highlight-tag {
+    display: inline-block;
+    padding: 3px 8px;
+    font-size: 11px;
+    font-weight: 900;
+    background-color: #ff003c; /* Đỏ lõi lửa */
+    color: #fff;
+    border-radius: 3px;
+    margin-right: 12px;
+    text-shadow: none;
+    box-shadow: 0 0 10px #ff003c;
+}
+
+.topic-list li:nth-child(2) .highlight-tag {
+    background-color: #ff6a00; /* Cam bốc cháy */
+    box-shadow: 0 0 10px #ff6a00;
+}
+
+.topic-list li:nth-child(3) .highlight-tag {
+    background-color: #ffcc00; /* Vàng hoàng kim khí */
+    color: #0a0503;
+    box-shadow: 0 0 10px #ffcc00;
+}
